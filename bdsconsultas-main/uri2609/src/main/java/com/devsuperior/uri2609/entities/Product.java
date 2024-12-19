@@ -1,12 +1,10 @@
 package com.devsuperior.uri2609.entities;
 
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "products")
