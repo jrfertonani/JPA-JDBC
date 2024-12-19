@@ -20,8 +20,7 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
 
     @Query("SELECT new com.devsuperior.uri2611.dto.MovieMinDTO(obj.id, obj.name) "
             + "FROM Movie obj "
-            + "INNER JOIN genres ON movies.id_genres = genres.id "
-            + "WHERE genres.description = :genreName ")
+            + "WHERE obj.genre.description = :genreName ")
     List<MovieMinDTO> search2(String genreName);
 
 
