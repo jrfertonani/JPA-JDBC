@@ -12,15 +12,15 @@ import java.util.List;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-     @Query(nativeQuery = true, value = "SELECT name "
-             + "FROM customers "
-             + "where UPPER(states) = UPPER(:state)")
-     List<CustomerMinProjection> search1(String state);
+    @Query(nativeQuery = true, value = "SELECT  name "
+            + "FROM customers "
+            + "WHERE state= UPPER(:state)")
+    List<CustomerMinProjection> serach1(String state);
 
-    @Query("SELECT new com.devsuperior.uri2602.dto.CustomerMinDTO(obj.nome) "
+    @Query("SELECT new com.devsuperior.uri2602.dto.CustomerMinDTO(obj.name) "
             + "FROM Customer obj "
-            + "where UPPER(obj.states) = UPPER(:state)")
-    List<CustomerMinDTO> search2(String state);
+            + "WHERE UPPER(obj.state) = UPPER(:state)")
+    List<CustomerMinDTO> serach2(String state);
 
 
 }

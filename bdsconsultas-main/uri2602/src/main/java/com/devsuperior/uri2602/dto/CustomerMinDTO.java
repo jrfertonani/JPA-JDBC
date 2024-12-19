@@ -1,34 +1,25 @@
 package com.devsuperior.uri2602.dto;
 
 import com.devsuperior.uri2602.projections.CustomerMinProjection;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
+@Getter
+@Setter
+@ToString
 public class CustomerMinDTO {
 
-    private String nome;
+    private String name;
 
     public CustomerMinDTO() {
     }
 
-    public CustomerMinDTO(String nome) {
-        this.nome = nome;
+    public CustomerMinDTO(String name) {
+        this.name = name;
     }
 
     public CustomerMinDTO(CustomerMinProjection projection) {
-        nome = projection.getNome();
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    @Override
-    public String toString() {
-        return "CustomerMinDTO{" +
-                "nome='" + nome + '\'' +
-                '}';
+        this.name = projection.getName();
     }
 }

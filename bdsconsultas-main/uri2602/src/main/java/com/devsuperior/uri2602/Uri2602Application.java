@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @SpringBootApplication
 public class Uri2602Application implements CommandLineRunner {
 	@Autowired
-	private CustomerRepository reposiitory;
+	private CustomerRepository repository;
 
 
 	public static void main(String[] args) {
@@ -24,17 +24,17 @@ public class Uri2602Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		List<CustomerMinProjection> list = reposiitory.search1("rs");
+		List<CustomerMinProjection> list = repository.serach1("rs");
 		List<CustomerMinDTO> result1 = list.stream().map(x -> new CustomerMinDTO(x)).collect(Collectors.toList());
 
 		System.out.println("\n****Consulta nativeQuery" );
 		for(CustomerMinDTO obj : result1){
-			System.out.println(obj.getNome());
+			System.out.println(obj.getName());
 		}
 
 		System.out.println("\n\n");
 
-		List<CustomerMinDTO> result2 = reposiitory.search2("rs");
+		List<CustomerMinDTO> result2 = repository.serach2("rs");
 		System.out.println("\n****Consulta JPQL" );
 		for(CustomerMinDTO obj : result2){
 			System.out.println(obj);
