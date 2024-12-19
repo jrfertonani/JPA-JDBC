@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class Uri2602Application implements CommandLineRunner {
+
 	@Autowired
 	private CustomerRepository repository;
 

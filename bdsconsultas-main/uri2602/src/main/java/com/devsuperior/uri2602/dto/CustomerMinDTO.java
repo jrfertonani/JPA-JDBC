@@ -10,6 +10,7 @@ import lombok.ToString;
 @ToString
 public class CustomerMinDTO {
 
+
     private String name;
 
     public CustomerMinDTO() {
