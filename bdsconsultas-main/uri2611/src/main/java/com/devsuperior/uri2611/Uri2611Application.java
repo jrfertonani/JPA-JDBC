@@ -25,6 +25,6 @@ public class Uri2611Application implements CommandLineRunner {
 
 		List<MovieMinProjection> list = repository.search1("Action");
 
-		
+
 	}
 }
