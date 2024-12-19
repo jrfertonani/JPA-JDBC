@@ -4,5 +4,5 @@ public interface MovieMinProjection {
 
     Long getId();
     String getNAme();
-    
+
 }
