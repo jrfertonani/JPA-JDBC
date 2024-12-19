@@ -34,7 +34,7 @@ public class Uri2602Application implements CommandLineRunner {
 
 		System.out.println("\n\n");
 
-		List<CustomerMinDTO> result2 = reposiitory.serach2("rs");
+		List<CustomerMinDTO> result2 = reposiitory.search2("rs");
 		System.out.println("\n****Consulta JPQL" );
 		for(CustomerMinDTO obj : result2){
 			System.out.println(obj);
