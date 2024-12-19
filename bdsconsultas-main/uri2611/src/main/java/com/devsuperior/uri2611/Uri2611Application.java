@@ -1,5 +1,6 @@
 package com.devsuperior.uri2611;
 
+import com.devsuperior.uri2611.dto.MovieMinDTO;
 import com.devsuperior.uri2611.projection.MovieMinProjection;
 import com.devsuperior.uri2611.repositories.MovieRepository;
 import org.apache.catalina.LifecycleState;
@@ -9,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class Uri2611Application implements CommandLineRunner {
@@ -24,6 +26,17 @@ public class Uri2611Application implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		List<MovieMinProjection> list = repository.search1("Action");
+		List<MovieMinDTO> result1 = list.stream().map(x -> new MovieMinDTO(x)).collect(Collectors.toList());
+
+		System.out.println("\n****Consulta nativeQuery" );
+		for(MovieMinDTO obj : result1){
+			System.out.println(obj);
+		}
+
+		System.out.println("\n\n");
+
+
+
 
 
 	}
